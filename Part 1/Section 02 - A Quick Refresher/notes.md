@@ -1,0 +1,1 @@
+In Python, an iterable is an object capable or returning values one at a time.
