@@ -1,14 +1,16 @@
 class Rectangle:
     def __init__(self, width, height):
-        self._width = width
-        self._height = height
+        self.width = width
+        self.height = height
 
-    def get_width(self):
+    @property
+    def width(self):
         return self._width
 
-    def set_width(self, width):
+    @width.setter
+    def width(self, width):
         if width <= 0:
-            raise ValueError('Width must be postitive')
+            raise ValueError("Width must be a positive number")
         self._width = width
 
     @property
@@ -52,3 +54,5 @@ print(r1.get_width())
 print(r1.height)
 r1.height = 90
 print(r1.height)
+
+# r2 = Rectangle(-10, 20)
