@@ -17,3 +17,30 @@ In computer science, a memory leak is a type of resource leak that occurs when a
 ### Garbage collector
 
 In computer science, garbage collection is a form of automatic memory management. The garbage collector, or just collector, attempts to reclaim garbage or memory occupied by objects that are no longer in use by the program.
+
+The oython
+
+### Dynamic Vs Static Typing
+
+A statically typed language variables' types are static, meaning once you set a variable to a type, you cannot change it. This is because typing is associated with the variable rather than the object it refers to.
+A dynamically typed language variables' types are dynamic, meaning after you set a variable to a type, you CAN change it. That is because typing is associated with the value it assumes rather than the variable itself.
+
+### Object Mutability
+
+An object whose internal state can be changed is called mutable.
+An object whose internal state cannot be changed is called immutable.
+
+#### Immitable Data types
+
+- Numbers (int,float,Booleans etc)
+- Strings
+- Tuples
+- Frozen Sets
+- User-Defined Classes
+
+#### Mutable Types
+
+- Lists
+- Sets
+- Dictionaries
+- User-Defined Classes
