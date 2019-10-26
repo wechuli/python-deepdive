@@ -71,3 +71,17 @@ But the **None** object is a real object that is managed by the Python memory ma
 Furthermore, the memory manager will always use a shared reference when assiging a variable to **None**
 
 So we can test if a variable is 'not set' or empty by comparing it's memory address to the memory address of **None** using the **is** operator.
+
+### Python Optimizations
+
+Interning: reusing objects on-demand
+
+- At startup, Python(CPython), pre-loads (caches) a global list of integers in the range [-5,256]
+  Any time an integer is referenced in that range, Python will use the cached version of that object.
+
+#### String Interning
+
+In computer science, string interning is a method of storing only one copy of each distinct string value, which must be immutable. Interning strings makes some string processing tasks more time-or-space efficient at the cost of requireing more time when the string is created or interned. The distinct values are stored in a string intern pool.
+
+
+There is another variety of optimizations that can occur at compile time.
