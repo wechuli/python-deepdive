@@ -27,3 +27,27 @@ For a>0 and b>0, these are indeed the same thing
 But beware when dealing with negative numbers
 
         a = b * (a//b) + a % b
+
+#### Fractional Numbers
+
+Rational numbers are fractions of integer numbers.
+
+Any real number with a finite number of digits after the decimal point is also a rational number.
+
+Rational numbers can be represented in Python using the Fraction class in the fractions module. Fractions are automatically reduced. Negative sign, if any, is always attached to the numerator.
+
+Fraction(numerator=0,denominator=1)
+Fraction(other_fraction)
+Fraction(float)
+Fraction(decimal)
+Fraction(string)
+
+Standard arithmetic operators are supported and result in Fraction object as well
+
+We can get the numerator and denominator of Fraction objects
+
+float objects have finite precision => any float object can be written as a fraction.
+
+Converting a float to a Fraction has an important caveat
+
+Given a Fraction object, we can find an approximate equivalent fraction with a constrained denominator i.e finds the closest rational (which could be precisely equal) with a denominator that does not exceed max_denominator
