@@ -51,3 +51,19 @@ float objects have finite precision => any float object can be written as a frac
 Converting a float to a Fraction has an important caveat
 
 Given a Fraction object, we can find an approximate equivalent fraction with a constrained denominator i.e finds the closest rational (which could be precisely equal) with a denominator that does not exceed max_denominator
+
+## Floats
+
+### Floats Internal Representations
+
+The float class is Python's default implementation for representing real numbers. The Python (CPython) float is implemented using the C double type which(usually) implements the IEEE 754 double-precision binary float and also called binary64.
+The float uses a fixed number of bytes -> 8bytes(64 bits)
+
+The 64 bits are used up as follows
+- **sign** -> 1 bit
+- **exponent** -> 11 bits
+- **significant digits** -> 52 bits -> 15-17 significant (base-10) digits
+
+- Numbers can be represented as base-10 integers and fractions
+
+The same problem that occurs when trying to represent 1/3 using a decimal expansion also happens when trying to represent certain numbers using a binary expansion. Some numbers that do have a finite decimal representation, do not have a finite binary representation and some do
