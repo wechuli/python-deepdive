@@ -67,3 +67,16 @@ The 64 bits are used up as follows
 - Numbers can be represented as base-10 integers and fractions
 
 The same problem that occurs when trying to represent 1/3 using a decimal expansion also happens when trying to represent certain numbers using a binary expansion. Some numbers that do have a finite decimal representation, do not have a finite binary representation and some do
+
+
+### Coercing to Integers
+
+data loss in all cases.
+
+- truncation - simply returns the integer portion of the number, int constructor uses the trunc operation
+- floor - the floor of a number is the largest integer less than (or equal to) the number - same as trunc for positive numbers but different when dealing with negative numbers
+- ceiling - the ceiling of a number is the smallest integer greater than (or equal to) the number.
+- rounding - python provides a built-in rounding function. This will round the number x to the closest mutliple of 10 -n
+
+#### Banker's Rounding
+- **IEEE 754 Standard** - rounds to the nearest value, with ties rounded to the nearest value with an even least significant digit. Banker's rounding is less biased rounding than ties away from zero.
