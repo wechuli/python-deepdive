@@ -80,3 +80,18 @@ data loss in all cases.
 
 #### Banker's Rounding
 - **IEEE 754 Standard** - rounds to the nearest value, with ties rounded to the nearest value with an even least significant digit. Banker's rounding is less biased rounding than ties away from zero.
+
+
+### Decimals
+alternative to using the (binary) float type -> avoids the approximation issues with floats finite number of significant digits. In Finance, banking and any other field where exact finite representations are highly desirable.
+
+Decimals have a context that controls certain aspects of working with decimals:
+
+ - precision during arithmetic operations
+ - rounding algorithm
+
+ The context can be global -> the default context or temporary (local) -> sets temporary settings without affecting the global settings
+
+ ctx = decimal.getcontext() -> context(global in this case)
+ ctx.prec -> get or set the precision (value is an int)
+ ctx.rounding -> get or set the rounding mechanism (value is a string)
