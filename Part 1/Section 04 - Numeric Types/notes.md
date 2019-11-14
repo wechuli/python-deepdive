@@ -60,6 +60,7 @@ The float class is Python's default implementation for representing real numbers
 The float uses a fixed number of bytes -> 8bytes(64 bits)
 
 The 64 bits are used up as follows
+
 - **sign** -> 1 bit
 - **exponent** -> 11 bits
 - **significant digits** -> 52 bits -> 15-17 significant (base-10) digits
@@ -67,7 +68,6 @@ The 64 bits are used up as follows
 - Numbers can be represented as base-10 integers and fractions
 
 The same problem that occurs when trying to represent 1/3 using a decimal expansion also happens when trying to represent certain numbers using a binary expansion. Some numbers that do have a finite decimal representation, do not have a finite binary representation and some do
-
 
 ### Coercing to Integers
 
@@ -79,19 +79,27 @@ data loss in all cases.
 - rounding - python provides a built-in rounding function. This will round the number x to the closest mutliple of 10 -n
 
 #### Banker's Rounding
+
 - **IEEE 754 Standard** - rounds to the nearest value, with ties rounded to the nearest value with an even least significant digit. Banker's rounding is less biased rounding than ties away from zero.
 
-
 ### Decimals
+
 alternative to using the (binary) float type -> avoids the approximation issues with floats finite number of significant digits. In Finance, banking and any other field where exact finite representations are highly desirable.
 
 Decimals have a context that controls certain aspects of working with decimals:
 
- - precision during arithmetic operations
- - rounding algorithm
+- precision during arithmetic operations
+- rounding algorithm
 
- The context can be global -> the default context or temporary (local) -> sets temporary settings without affecting the global settings
+The context can be global -> the default context or temporary (local) -> sets temporary settings without affecting the global settings
 
- ctx = decimal.getcontext() -> context(global in this case)
- ctx.prec -> get or set the precision (value is an int)
- ctx.rounding -> get or set the rounding mechanism (value is a string)
+ctx = decimal.getcontext() -> context(global in this case)
+ctx.prec -> get or set the precision (value is an int)
+ctx.rounding -> get or set the rounding mechanism (value is a string)
+
+The **Decimal** class is in the decimal module
+Decimal(x) x can be a variety of types -integers,other Decimal object,strings,tuples,floats(yes but not usually, pass as a string)
+
+
+- Context precision affects mathematical operations
+- Context precision does not affect the constructor

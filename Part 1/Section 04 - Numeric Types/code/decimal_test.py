@@ -8,4 +8,4 @@ def addnumbers(additions):
     return result
 
 
-print(addnumbers(1000000000))
+print(addnumbers(10000))
