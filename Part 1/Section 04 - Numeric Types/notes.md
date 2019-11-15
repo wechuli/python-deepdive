@@ -103,3 +103,9 @@ Decimal(x) x can be a variety of types -integers,other Decimal object,strings,tu
 
 - Context precision affects mathematical operations
 - Context precision does not affect the constructor
+
+There are some drawbacks to the Decimal class vs the float class
+- not as easy to code: construction via strings or tuples
+- not all mathematical functions that exist in the math module have a Decimal counterpart
+- more memory overhead
+- performance: much slower than floats (relatively)
