@@ -118,3 +118,12 @@ Instantiated using the complex class.
 - The == and != operators are supported
 - Comparison operators such as <,> <= >= are not supported
 - Function in the math module will not work, use the cmath
+
+### Booleans
+
+Python has a concrete **bool** class that is used to represent Boolean values. However, the bool class is a subclass of the int class
+
+is vs ==
+Because True and False are singleton objects, they will always retain their same memory address throughout the lifetime of your application.
+
+But since bool objects are also int objects, they can also be interpreted as the integers 1 and 0
