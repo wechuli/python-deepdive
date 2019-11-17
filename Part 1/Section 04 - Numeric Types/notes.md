@@ -109,3 +109,12 @@ There are some drawbacks to the Decimal class vs the float class
 - not all mathematical functions that exist in the math module have a Decimal counterpart
 - more memory overhead
 - performance: much slower than floats (relatively)
+
+### Complex Numbers
+
+Instantiated using the complex class.
+- The standard arithmetic operators (+,-,/,*,**) work as expected with complex numbers. Real and complex numbers can be mixed
+- The // and % are not supported
+- The == and != operators are supported
+- Comparison operators such as <,> <= >= are not supported
+- Function in the math module will not work, use the cmath
