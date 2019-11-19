@@ -100,11 +100,11 @@ ctx.rounding -> get or set the rounding mechanism (value is a string)
 The **Decimal** class is in the decimal module
 Decimal(x) x can be a variety of types -integers,other Decimal object,strings,tuples,floats(yes but not usually, pass as a string)
 
-
 - Context precision affects mathematical operations
 - Context precision does not affect the constructor
 
 There are some drawbacks to the Decimal class vs the float class
+
 - not as easy to code: construction via strings or tuples
 - not all mathematical functions that exist in the math module have a Decimal counterpart
 - more memory overhead
@@ -113,7 +113,8 @@ There are some drawbacks to the Decimal class vs the float class
 ### Complex Numbers
 
 Instantiated using the complex class.
-- The standard arithmetic operators (+,-,/,*,**) work as expected with complex numbers. Real and complex numbers can be mixed
+
+- The standard arithmetic operators (+,-,/,\*,\*\*) work as expected with complex numbers. Real and complex numbers can be mixed
 - The // and % are not supported
 - The == and != operators are supported
 - Comparison operators such as <,> <= >= are not supported
@@ -127,3 +128,22 @@ is vs ==
 Because True and False are singleton objects, they will always retain their same memory address throughout the lifetime of your application.
 
 But since bool objects are also int objects, they can also be interpreted as the integers 1 and 0
+
+All objects in Python have an associated truth value.
+
+Every object has a True truth value except:
+
+- None
+- False
+- )
+- empty sequences (e.g list, tuple)
+- empty mapping types (e.g dict,set)
+- custom classes implementing \_
+
+### Operator Precedence
+
+- **()**
+- **< > <= >= == != in is**
+- **not**
+- **and**
+- **or**
