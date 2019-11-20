@@ -147,3 +147,43 @@ Every object has a True truth value except:
 - **not**
 - **and**
 - **or**
+
+### Boolean Operators and Truth Values
+
+Normally, Boolean operators (NOT, OR, AND) are defined to operate on and return Boolean values. But every object in Python has a truth value (truthiness).
+So, for any object X and Y, we could also write `bool(X)` and `bool(Y)` `bool(X)` or `bool(Y)`
+In fact, we don't need to use `bool()` `X and Y` `X or Y`
+So, what is returned when evaluating these expressions ?
+
+#### Definition of or in Python
+
+`X or Y` If X is truthy, returns X, otherwise returns Y or
+If `X` is truthy, returns `X`, otherwise evaluates `Y` and returns it
+
+#### Definition of and in Python
+
+`X and Y` If `X` is falsy, returns `X`, otherwise returns `Y`
+If X is falsy, returns `X`, otherwise evaluates `Y` and returns it
+
+#### The Boolean not
+
+**not** is a built-in function that returns a Boolean value
+
+not `x` -> True if x is falsy
+        -> False if x is truthy
+
+
+
+## Comparison Operators
+- binary operators
+- evaluate to a **bool** value
+
+- **Identity Operations** - `is` `is not` - compares memory address  - any type
+- **Value Comparisons** - `==` `!=` compares values - different types OK, but must be compatible
+- **Ordering Comparisons** - `<` `>` `<=` `>=` doesn't work for all types
+- **Membership Operations** - `in` `not in` used with iterable types
+
+### Numeric Types
+
+Value comparisons will work with all numeric types
+Mixed types (Except complex) in value and ordering
