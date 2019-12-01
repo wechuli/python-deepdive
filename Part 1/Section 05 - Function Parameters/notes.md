@@ -8,3 +8,11 @@ The entire RHS is evaluated first and completely then assignments are made to th
 
 - The * operator can only be used once in the LHS of an unpacking assignment
 - The ** unpacking
+
+
+- We set a default for dt to None
+- Inside the function, we test to see if dt is still None
+- If dt is None, set it to the current data/time
+- Otherwise, use what the caller specified for dt
+
+In general, always beware of using a mutable object (or a callable) for an argument default
