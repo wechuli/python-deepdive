@@ -12,3 +12,7 @@ Any object that can be called using the () operator callables always return a va
 - classes
 - class intances
 - generators,corotines, asynchronous generators
+
+### Higher Order Functions
+
+A function that takes a function as a parameter or returns a function
