@@ -27,3 +27,7 @@ A function that takes a function as a parameter or returns a function
 #### The reduce initializer
  The reduce function has a third(optional) parameter: initializer (defaults to None)
  It is specified, it is essentially like adding it to the front of the iterable.. It is often used to provide some kind of default in case the iterable is empty.
+
+ ## Partial Functions
+
+ Partial functions allow one to derive a function with x parameters to a function with fewer parameters and fixxed values set for the more limited function.

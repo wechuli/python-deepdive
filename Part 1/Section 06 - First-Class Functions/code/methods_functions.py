@@ -5,9 +5,6 @@ class Person:
 
     def __repr__(self):
         return f'{self._first_name},{self._last_name}'
-    
-    
-
 
 
 class Student(Person):
