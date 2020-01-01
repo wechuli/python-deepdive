@@ -31,3 +31,12 @@ A function that takes a function as a parameter or returns a function
  ## Partial Functions
 
  Partial functions allow one to derive a function with x parameters to a function with fewer parameters and fixxed values set for the more limited function.
+
+ ## Operator Module
+
+ ### Item Getters
+ The **itemgetter** function returns a callable.
+
+ ### Attribute Getters
+
+ The **attrgetter** function is similar to **itemgetter**, but is used to retrieve object attributes. It also returns a callable, that takes the object as an argument.
