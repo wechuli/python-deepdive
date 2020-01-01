@@ -8,3 +8,23 @@ print(reduce(mul, [1, 2, 3, 4, 5]))
 
 mylist = [1, 2, 3, 4]
 print(getitem(mylist, 3))
+
+
+f_getter = itemgetter(2)
+print(f_getter(mylist))
+
+
+class MyClass:
+    def __init__(self):
+        self.a = 10000
+        self.b = 20
+        self.c = 30
+
+    def test(self):
+        print("Test method running")
+
+
+obj = MyClass()
+
+f_attrgetter = attrgetter('a')
+print(f_attrgetter(obj))
