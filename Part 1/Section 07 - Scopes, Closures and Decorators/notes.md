@@ -52,3 +52,12 @@ We can tell Python that a variable is meant to be scoped in the global scope by 
 When Python encounters a function definition at compile-time, it will scan for any labels (variables) that have values assigned to them (anywhere in the function). If the label has not been specified as **global**, then it will be local.
 
 Variables that are referenced but not assigned a value anywhere in the function will not be local, and Python will, at run-time. look for them in enclosing scopes.
+
+### Nonlocal scopes
+
+We can define functions from inside another function. Both functions have access to the global and built-in scopes as well as their respective local scopes. But the inner function also has access to its enclosing scope - the scope of the outer function. That scope is neither local (to inner_func) nor global - it is called a `nonlocal` scope.
+
+Just as with global variables, we have to explicitly tell Python we are modifying a nonlocal variable. We can do that using the **nonlocal** keyword.
+whenever Python is told that a variable is nonlocal:
+
+- it will look for it in the enclosing local scopes chain until it first encounters the specified variable name. Beware that it will only look in local scopes, it will not look in the global scope.
