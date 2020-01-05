@@ -69,3 +69,9 @@ Functions defined inside another function can access the outer(nonlocal) variabl
 A closure is a persistent scope which holds on to local variables even after the code execution has moved out of that block. Languages which support closures will allow you to keep a reference to a scope(including its parent scope), even after the block in which those variables were declared has finished executing, provided you keep a reference to that block or function somewhere.
 
 The scope object and all its local variables are tied to the function and will persist as long as that function persists. This gives us function portability. We can expect any variables that were in scope when the function was first defined to still be in scope when we later call the function, even if we call the function in a completely different context.
+
+You can think of the closure as a function plus an extended scope that contains the free variables. The free variables's value is the object the cell points to - so that could change over time! Every time the function in the closure is called and the free variable is referenced:
+
+- Python looks up the cell object, and then whatever the cell is pointing to
+
+Every time we run a function, a new scope is created. If that function generates a closure, a new closure is created every time as well.
