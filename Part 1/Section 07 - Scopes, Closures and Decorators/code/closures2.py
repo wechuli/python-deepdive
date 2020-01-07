@@ -20,7 +20,7 @@ print(fn.__closure__)
 
 
 def counter():
-    count = 0
+    count = 10000
     fakelist = []
 
     def inc():
