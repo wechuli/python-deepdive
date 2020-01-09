@@ -75,3 +75,48 @@ You can think of the closure as a function plus an extended scope that contains 
 - Python looks up the cell object, and then whatever the cell is pointing to
 
 Every time we run a function, a new scope is created. If that function generates a closure, a new closure is created every time as well.
+
+## Decorators
+
+A decorator in Python is any callable Python object that is used to modify a function or a class. A reference to a function "func" or a class "C" is passed to a decorator and the decorator returns a modified function or class. The modified functions or classes usually contain calls to the original function "func" or class "C".
+
+In general a decorator function:
+
+- takes a function as an argument
+- returns a closure
+- the closure usually accepts any combination of parameters
+- runs some code in the inner function(closure)
+- the closure function calls the original function using the arguments passes to the closure
+- returns whatever is returned by that function call
+
+The decorator @ symbol is a convenience to specify decorators.
+
+In general, if **func** is a decorator function, we decorate another function **my_func** using
+
+```Python
+my_func = func(my_func)
+
+```
+
+This is so common that Python provides a convenient way of writing that:
+
+```Python
+@counter
+def add(a,b):
+    return a+b
+
+```
+
+is the same as writing
+
+```Python
+def add(a,b):
+    return a+b
+
+add = counter(add)
+```
+
+
+### Introspection of Decorated Functions
+
+The **functools** module has a wraps function that we can use to fix the metadata of our inner function in our decorator. But it needs to know what was out "original" function
