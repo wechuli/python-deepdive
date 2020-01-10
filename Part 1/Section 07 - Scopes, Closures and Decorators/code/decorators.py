@@ -15,7 +15,7 @@ def counter(fn):
 
 
 @counter
-def mult(a: int, b: int, c: int = 1):
+def mult(a: float, b: float, c: float = 1) -> float:
     """
     returns the product of three variables
     """
