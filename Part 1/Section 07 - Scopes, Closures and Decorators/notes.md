@@ -120,3 +120,7 @@ add = counter(add)
 ### Introspection of Decorated Functions
 
 The **functools** module has a wraps function that we can use to fix the metadata of our inner function in our decorator. But it needs to know what was out "original" function
+
+## Memoization
+
+In computing, memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
