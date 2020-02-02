@@ -116,7 +116,6 @@ def add(a,b):
 add = counter(add)
 ```
 
-
 ### Introspection of Decorated Functions
 
 The **functools** module has a wraps function that we can use to fix the metadata of our inner function in our decorator. But it needs to know what was out "original" function
@@ -128,4 +127,7 @@ In computing, memoization or memoisation is an optimization technique used prima
 ### Parameterized Decorators
 
 #### Decorator Factories
+
 The outer function is not itself a decorator. Instead it returns a decorator when called and any arguments passed to outer can be referenced (as free variables) inside our decorator. We call this outer function a decorator factory function.
+
+#### Decorating Classes
