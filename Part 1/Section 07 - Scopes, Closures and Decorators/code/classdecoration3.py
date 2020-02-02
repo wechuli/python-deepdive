@@ -68,12 +68,12 @@ class Point2:
         return f'Point({self.x},{self.y})'
 
     def __eq__(self, other):
-        if isinstance(other, Point):
+        if isinstance(other, Point2):
             return self.x == other.x and self.y == other.y
         return False
 
     def __lt__(self, other):
-        if isinstance(other, Point):
+        if isinstance(other, Point2):
             return abs(self) < abs(other)
         return NotImplemented
 
@@ -82,4 +82,4 @@ p21, p22, p23, p24 = Point2(2, 3), Point2(
     4, 43), Point2(32, 33), Point2(32, 33)
 
 
-print(p21 >= p24)
+print(p21 <= p24)
