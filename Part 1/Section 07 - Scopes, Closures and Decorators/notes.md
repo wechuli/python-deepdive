@@ -131,3 +131,5 @@ In computing, memoization or memoisation is an optimization technique used prima
 The outer function is not itself a decorator. Instead it returns a decorator when called and any arguments passed to outer can be referenced (as free variables) inside our decorator. We call this outer function a decorator factory function.
 
 #### Decorating Classes
+
+#### Decorator Application: Single Dispatch Generic Functions
