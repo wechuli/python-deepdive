@@ -48,7 +48,9 @@ def htmlize(arg):
         object: html_escape,
         int: html_int,
         float: html_real,
-        Decimal: html_int,
+        Decimal: html_real,
+        str: html_str,
+        list: html_list,
         tuple: html_list,
         set: html_set,
         dict: html_dict
