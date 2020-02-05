@@ -133,3 +133,8 @@ The outer function is not itself a decorator. Instead it returns a decorator whe
 #### Decorating Classes
 
 #### Decorator Application: Single Dispatch Generic Functions
+
+
+##### Dynamic dispatch
+
+In computer science, dynamic dispatch is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time. It is commonly employed in and considered a prime characteristic of object-oriented programming (OOP) languages and systems.
