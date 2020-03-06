@@ -19,4 +19,4 @@ from collections import namedtuple
   - field names can be any valid variable name except that they cannot start with an underscore
 - The return value of the call to namedtuple will be a class
 
-We need to assign that class to a variable name in our code so we can use it to construct instances. In general, we use the same name as the name of the class that was generated.
+We need to assign that class to a variable name in our code so we can use it to construct instances. In general, we use the same name as the name of the class that was generated. Since namedtuple generated classes that inherit from tuple, its objects are also immutable.
