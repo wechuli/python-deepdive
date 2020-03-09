@@ -19,3 +19,18 @@ print(Stock._fields)
 
 new_fields = Stock._fields + ('previous_close',)
 StockExt = namedtuple('StockExt', new_fields)
+
+
+Point2D = namedtuple('Point2D', ('x', 'y'))
+
+pt1 = Point2D(10, 20)
+print(pt1[0])
+print(hex(id(pt1)))
+
+pt1 = pt1._replace(x=1000)
+
+print(pt1[0])
+print(hex(id(pt1)))
+
+
+djia = Stock._make()
