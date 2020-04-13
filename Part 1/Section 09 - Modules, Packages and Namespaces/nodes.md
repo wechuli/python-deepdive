@@ -13,3 +13,68 @@ A module is a file containing Python definitions and statements. The file name i
 - compiles and executes the source code.
 
 We use two built-in functions, `compile` and `exec`. The `compile` function compiles source (e.g text) into a code object. The `exec` function is used to execute a code object. Optionally we can specify what dictionary should be used to store global symbols.
+
+### How does an import actually happen
+
+For example importing as below
+
+```python
+# module1.py
+import math
+
+```
+
+- Check if `math` is in `sys.modules`, if not, load it and insert a ref of `math` to it in `sys.modules`
+- add symbol `math` to module1;s global namespace referencing the same object
+
+```python
+import math as r_math
+
+```
+
+- Check if `math` is in `sys.modules`, if not, load it and insert a ref of `math` to it in `sys.modules`
+- add symbol `r_math` to module1;s global namespace referencing the same object
+
+```python
+from math import sqrt
+
+
+```
+
+- The math symbol is not in the global namespace but is in the `sys.modules`. This is not anymore efficient because the whole math module was loaded into the `sys.modules`
+
+```python
+from math import sqrt as r_sqrt
+```
+
+What changes is the global namespace
+
+```python
+from math import *
+```
+
+add "all" symbols defined in math to module1's global namespace
+
+## Modules Recap
+
+- Modules can be imported using the `import` statement
+- When a module is imported:
+  - `system cache` is checked first **sys.modules** -> if in cache, just returns cached reference otherwise
+  - module has to be located(found) somewhere using finders e.g `sys.meta_path`
+  - module code has to be retrieved(loaded) - loaders returned by finders
+  - "empty" module typed object is created
+  - a reference to the module is added to the system cache sys modules
+  - module is compiled
+  - module is executed -> sets up the module's namespace (`module.__dict__` is `module.globals()`)
+
+
+## Module Properties
+- built-in
+- standard library
+- custom module
+
+Python modules may reside 
+- in built ins
+- in files on disk
+- they can even be pre-compiled, frozen or even inside zip archives
+- anywhere else that can be accessed by a finder and a loader custom finders/loaders -> database, http
