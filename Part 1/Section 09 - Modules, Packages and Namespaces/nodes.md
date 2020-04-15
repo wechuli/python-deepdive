@@ -67,14 +67,40 @@ add "all" symbols defined in math to module1's global namespace
   - module is compiled
   - module is executed -> sets up the module's namespace (`module.__dict__` is `module.globals()`)
 
-
 ## Module Properties
+
 - built-in
 - standard library
 - custom module
 
-Python modules may reside 
+Python modules may reside
+
 - in built ins
 - in files on disk
 - they can even be pre-compiled, frozen or even inside zip archives
 - anywhere else that can be accessed by a finder and a loader custom finders/loaders -> database, http
+
+## Python Packages
+
+Packages are modules that can contain modules or other packages(sub-packages). If a module is a package, it must have a value set for `__path__`. After you have imported a module, you can easily see if that module is a package by inspecting the `__path__` attribute. (empty -> module, non-empty-> package)
+
+- Remember that modules do not have to be entities in a file system
+- By the same token, packages ddo not have to be entities in the file system
+- Typically they are - just as typically modules are file entities
+
+### Importing Nested Packages
+
+If you have a statement in your top-level program such as:
+
+```python
+
+import pack1.pack1_1.module1
+
+```
+
+The import system will perform these steps:
+- Import `pack1`
+- imports `pack.pack1_1`
+- imports `pack1.pack1_1.module1`
+
+The `sys.modules` cache will contain entries for `pack1` `pack1.pack1_1` and `pack1.pack1_1.module1`
