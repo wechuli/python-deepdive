@@ -99,8 +99,57 @@ import pack1.pack1_1.module1
 ```
 
 The import system will perform these steps:
+
 - Import `pack1`
 - imports `pack.pack1_1`
 - imports `pack1.pack1_1.module1`
 
 The `sys.modules` cache will contain entries for `pack1` `pack1.pack1_1` and `pack1.pack1_1.module1`
+
+### File Based Packages
+
+- package paths are created by using file system directories and files
+- A package is simply a module that can contain other modules/packages
+- On a file system we therefore have to use directories for packages
+- The directory name becomes the package name
+- So where does the code go for the package - `__init__`
+
+To define a package in our file system, we must:
+
+- create a directory whose name will be the package name
+- create a file called `__init.py__` inside that directory
+
+That `__init__.py` file is what tells Python that the directory is a package as opposed to a standard directory. If we don't have an **init**.py
+
+#### What happens when a file based package is imported?
+
+app/
+pack1/
+**init**.py
+module1.py
+module2.py
+
+```python
+
+import pack1
+
+```
+
+- the code for `pack1` is in **init**.py
+- that code is loaded, executed and cached in `sys.modules` with a key of `pack1`- it's just a module
+- the symbol `pack1` is added to our namespace referencing the same object
+- but is also has a `__path__` property -> file system directory path(absolute)
+- also has a __file__ property -> file system path to  __init__.py
+
+### Nested Packages
+
+
+
+`__file__`,`__path__` and `__package__` properties. Modules have `__file__` and `__package__` properties.
+
+- `__file__` is the location of modules code in the file system
+- `__package__` is the package the module code is located in - an empty string if the module is located in the application root
+
+If the module is also a package, then it also has a `__path__` property
+
+- Just because a package is loaded, does not mean the package has loaded everything inside that package. By default it does not
