@@ -139,11 +139,9 @@ import pack1
 - that code is loaded, executed and cached in `sys.modules` with a key of `pack1`- it's just a module
 - the symbol `pack1` is added to our namespace referencing the same object
 - but is also has a `__path__` property -> file system directory path(absolute)
-- also has a __file__ property -> file system path to  __init__.py
+- also has a **file** property -> file system path to **init**.py
 
 ### Nested Packages
-
-
 
 `__file__`,`__path__` and `__package__` properties. Modules have `__file__` and `__package__` properties.
 
@@ -153,3 +151,15 @@ import pack1
 If the module is also a package, then it also has a `__path__` property
 
 - Just because a package is loaded, does not mean the package has loaded everything inside that package. By default it does not
+
+### Using **init**.py
+
+We can use packages `__init__.py` code to export(expose) just what's needed by our users.
+
+### Why Packages
+
+- ability to break code up into smaller chunks, makes our code
+  - easier to write
+  - easier to test and debug
+  - easier to read/understand
+  - easier to document
