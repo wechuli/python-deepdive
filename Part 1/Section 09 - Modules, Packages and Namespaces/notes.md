@@ -163,3 +163,16 @@ We can use packages `__init__.py` code to export(expose) just what's needed by o
   - easier to test and debug
   - easier to read/understand
   - easier to document
+
+### Implicit Namespace Packages?
+
+Namespace packages are package-like
+
+directories
+
+- may contain modules
+- may contain nested regular packages
+- may contain nested namespace packages
+- but cannot contain **init**.py
+
+These directories are implicitly made into these special types of packages.

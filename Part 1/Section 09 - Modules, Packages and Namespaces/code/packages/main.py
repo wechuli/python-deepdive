@@ -1,13 +1,14 @@
-import common.validators.boolean
-import common.validators.date
-import common.validators.json
+# import common.validators.boolean
+# import common.validators.date
+# import common.validators.json
 # import common.validators.numeric
 
 #  from common.validators.numeric import is_integer, is_numeric
 
 # common.validators.json.is_json(45)
 
-import common.validators 
+import common.validators
+
 
 
 
@@ -35,3 +36,5 @@ for k in common.validators.__dict__.keys():
 
 # for k in common.validators.numeric.__dict__.keys():
 #     print(k)
+
+

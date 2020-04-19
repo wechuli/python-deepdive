@@ -9,9 +9,9 @@ def is_numeric(arg):
     pass
 
 
-def numeric_helper_1():
+def _numeric_helper_1():
     pass
 
 
-def numeric_helper_2():
+def _numeric_helper_2():
     pass
