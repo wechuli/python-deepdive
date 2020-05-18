@@ -36,8 +36,29 @@ class ContactBookModel:
     def update_contact(self, id: int):
         pass
 
-    def search_contacts(self, *args):
-        pass
+    def search_contacts(self, *, name=None, surname=None, address=None, phone=None):
+        if name and not surname and not address and not phone:
+            self.get_single_query_search("name", name)
+        elif surname and not name and not address and not phone:
+            self.get_single_query_search("surname", surname)
+        elif address and not name and not phone and not surname:
+            self.get_single_query_search("address", address)
+        elif phone and not name and not surname and not address:
+            self.get_single_query_search("phone", phone)
+        elif not name and not surname and not address and not phone:
+            print(
+                "Please tell us which column you would like to search from and the search term")
+        else:
+            print("Only single column searches are supported at the moment")
+
+    def get_single_query_search(self, column: str, search_term: str):
+        search_query = f"SELECT * FROM contacts WHERE {column} ILIKE %s"
+
+        self._cur.execute(search_query, (f'%{search_term}%',))
+        contacts = self._cur.fetchall()
+        print(tabulate(contacts, headers=[
+            'id', 'name', 'surname', 'address', 'phone'], tablefmt='orgtbl'))
+        self._conn.commit()
 
     def close_connection(self):
         self._cur.close()

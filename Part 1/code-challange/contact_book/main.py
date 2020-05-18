@@ -21,6 +21,9 @@ parser.add_argument('-a', '--action', help='choose the type of action you want t
 # id
 parser.add_argument('--id', help="choose the id of the user",
                     required=False, type=int, dest="user_id")
+# read mode
+parser.add_argument('--mode', help='choose the read mode to return contacts, either search or all',
+                    type=str, required=False, dest="read_mode", choices=["all", "search"])
 
 # name
 parser.add_argument(
@@ -40,7 +43,7 @@ parser.add_argument('--phone', type=int, required=False,
 
 
 args = parser.parse_args()
-# print(args)
+print(args)
 if args.action == 'create':
     if not args.name or not args.phone:
         print("To create a record, you must provide a minimum of name and phone values")
@@ -48,12 +51,26 @@ if args.action == 'create':
     else:
         contact_book.create_contact(
             name=args.name, phone=args.phone, address=args.address, surname=args.surname)
+        print("Contact created successfully")
 
 
 elif args.action == 'read':
-    contact_book.read_all_contacts()
+    read_mode = args.read_mode
+    if not read_mode:
+        print("Please provide a read mode to proceed, either all or search")
+        exit()
+    if read_mode == "all":
+        contact_book.read_all_contacts()
+    elif read_mode == "search":
+        contact_book.search_contacts(
+            name=args.name, surname=args.surname, phone=args.phone, address=args.address)
+
+
 elif args.action == 'update':
     print("updating")
 else:
     print('delete')
 
+
+# close connection
+contact_book.close_connection()
