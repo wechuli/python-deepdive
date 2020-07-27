@@ -8,3 +8,7 @@ There are six sequence types:strings, byte sequecnes, byte arrays, lists,tuples,
 What does it mean for an object to be iterable ?
 
 It is a container type of object and we can list out the elements in that object one by one. So any sequence type is iterable. But an iterable is not necessarily a sequence type. Iterables are more general e.g sets or dicts.
+
+## List Vs Tuples
+
+- **Constant folding** - Constant folding is the process of recognizing and evaluating constant expression at compile time rather than computing them at runtime.
