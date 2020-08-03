@@ -39,7 +39,6 @@ Generally we write functions that do not modify the contents of their arguments.
 
 Using any of the techniques above, we have obtained a copy of the original, a shallow copy.
 
-
 ### Deep Copies
 
 So, if collections contain mutable elements, shallow copies are not sufficient to ensure the copy can never be used to modify the original. Instead we have to do a something called a deep copy.
@@ -49,3 +48,25 @@ The standard library **copy** module has generic copy and deepcopy operations.
 The **copy** function will create a shallow copy. The **deepcopy** function will create a deep copy, handling nested objects, and circular reference properly.
 
 Custom classes can implement the `__copy__` and `__deepcopy__` methods to allow you to override how shallow and deep copies are made for your custom objects.
+
+## Slicing
+
+Slicing relies on indexing - only works with sequence types
+
+| **Mutable Sequence Types** | **Immutable Sequence Types** |
+| -------------------------- | ---------------------------- |
+| Extract Data               | Extract data                 |
+| assign data                |
+
+slice definitions are actually objects
+
+### Step Value
+
+Slices also support a third argument - the step value. When not specified, the step value defaults to 1.
+
+
+Any slice essentially defines a sequence of indices that is used to select elements for another sequence. In fact, any indices defined by a slice can also be defined using a range. The difference is that slices are defined independently of the sequence being sliced.
+
+Be careful of empty slices.
+
+The **slice** object has a method, indices, that returns the equivalent range start/stop/step for any slice given the length of the sequence being sliced.
