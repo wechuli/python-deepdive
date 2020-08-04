@@ -64,9 +64,40 @@ slice definitions are actually objects
 
 Slices also support a third argument - the step value. When not specified, the step value defaults to 1.
 
-
 Any slice essentially defines a sequence of indices that is used to select elements for another sequence. In fact, any indices defined by a slice can also be defined using a range. The difference is that slices are defined independently of the sequence being sliced.
 
 Be careful of empty slices.
 
 The **slice** object has a method, indices, that returns the equivalent range start/stop/step for any slice given the length of the sequence being sliced.
+
+## Creating Custom Sequence Types
+
+At it's most basic, an immutable sequence type should support two things:
+
+- returning the length of the sequence
+- given an index, returning the element at that index
+
+If an object provides this functionality, then we should in theory be able to:
+
+- retrieve elements by index using square brackets
+- iterate through the elements using Python's native looping mechanisms
+
+Remember that sequence types are iterables, but not all iterables are sequence types.
+
+Sequence types at a minimum, implement the following methods
+
+`__len__`
+
+`__getitem__`
+
+At its most basic, the `__getitem__` method takes in a single integer argument - the index. However, it may also choose to handle a slice type argument.
+
+### The `__getitem__` method
+
+The `__getitem__` method should return an element of the sequence based on the specified index or raise an `IndexError` exception if the index is out of bounds.
+
+### The `__len__` Method
+
+In general sequence types support the Python built-in function `len()`
+
+To support this all we need to do is implement the `__len__` method in our custom sequence type.

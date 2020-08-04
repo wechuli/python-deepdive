@@ -15,3 +15,10 @@ new_slice = slice(9, -90, -3)
 
 equivalent_range = new_slice.indices(6)
 print(equivalent_range)
+
+
+l = 'python'
+
+print(l[::-1])
+print(l[len(l):-10:-1])
+print(l[5:-len(l)-1:-1])
