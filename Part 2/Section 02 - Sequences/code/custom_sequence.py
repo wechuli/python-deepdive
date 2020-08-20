@@ -12,12 +12,16 @@ class Silly:
         return self.n
 
     def __getitem__(self, value):
+        print(type(value))
         if value < 0 or value >= self.n:
             raise IndexError
-        return 'This is a silly element'
+        return f' Element {value}'
 
 
 silly = Silly(10)
+# print(len(silly))
+# for word in silly:
+#     print(word)
 
-for word in silly:
-    print(word)
+print(silly[2])
+print(silly[1:2])
