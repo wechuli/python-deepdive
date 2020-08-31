@@ -101,3 +101,7 @@ The `__getitem__` method should return an element of the sequence based on the s
 In general sequence types support the Python built-in function `len()`
 
 To support this all we need to do is implement the `__len__` method in our custom sequence type.
+
+### Stable Sorts
+
+A stable sort is one that maintains the relative order of items that have equal keys

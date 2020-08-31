@@ -35,6 +35,24 @@ class Polygon:
     def __getitem__(self, s):
         return self._pts[s]
 
+    def __setitem__(self, s, value):
+
+        try:
+            rhs = [Point(*pt) for pt in value]
+            is_single = False
+        except TypeError:
+            try:
+                rhs = Point(*value)
+                is_single = True
+            except TypeError:
+                raise TypeError('Invalid Point or iterable of Points')
+
+        if(isinstance(s, int) and is_single) or (isinstance(s, slice) and not is_single):
+            self._pts = rhs
+
+        else:
+            raise TypeError("Incompatible index/slice assignement")
+
     def __add__(self, other):
         if isinstance(other, Polygon):
             new_pts = self._pts + other._pts
@@ -65,6 +83,15 @@ class Polygon:
     def __iadd__(self, other):
         self.extend(other)
         return self
+
+    def __delitem__(self, s):
+        del self._pts[s]
+
+    def pop(self, i):
+        return self._pts.pop(i)
+
+    def clear(self):
+        self._pts.clear()
 
 
 p1 = Polygon((0, 0), Point(1, 1))
