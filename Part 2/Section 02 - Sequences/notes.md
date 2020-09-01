@@ -105,3 +105,24 @@ To support this all we need to do is implement the `__len__` method in our custo
 ### Stable Sorts
 
 A stable sort is one that maintains the relative order of items that have equal keys
+
+## Comprehesnions
+
+Comprehensions have their own local scope - just like a function.
+
+We should think of a list comprehension as being wrapped in a function that is created by Python that will return the new list when executed. When the RHS of a list comprehension is compiled, Python creates a temporary function that will be used to evaluate the comprehension. So comprehesnions are basically functions. They have their own local scope but they can access global variables.
+
+### Nested Comprehesnions
+
+Comprehensions can be nested within each other. And since they are functions, a nested comprehesnion can access nonlocal variables from the ecnclosing comprehension
+
+### Nested Loops in Comprehensions
+
+We can have nested loops(as many levels as we want) in comprehensions.
+
+This is not the same as nested comprehensions
+
+```python
+l = [(i,j,k) for i in range(5) for j in range(5) for k in range(5)]
+```
+Note that the order in which the for loops are specified in the comprehension corresponds to the nested loops
