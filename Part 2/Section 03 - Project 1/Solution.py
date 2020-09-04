@@ -3,6 +3,8 @@ import math
 
 class Polygon:
     def __init__(self, n, R):
+        if n < 3:
+            raise ValueError('Polygon must have at least three sides')
         self._n = n
         self._R = R
 
@@ -19,7 +21,7 @@ class Polygon:
 
     @property
     def circumradius(self):
-        return self._vertices
+        return self._R
 
     @property
     def interior_angle(self):
@@ -40,3 +42,13 @@ class Polygon:
     @property
     def perimeter(self):
         return self._n * self.side_length
+
+    def __eq__(self, other):
+        if not isinstance(other, self.__class__):
+            raise TypeError("Only polygons can be compared")
+        return (self.count_edges == other.count_edges) and (self.circumradius == other.circumradius)
+
+    def __gt__(self, other):
+        if not isinstance(other, self.__class__):
+            raise TypeError("Only polygons can be compared")
+        return self.count_vertices > other.count_vertices

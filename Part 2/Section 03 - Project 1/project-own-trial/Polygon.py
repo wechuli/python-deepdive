@@ -80,14 +80,17 @@ class Polygons:
     @property
     def maxefficiencyp(self) -> Polygon:
         sorted_eff_ratios = sorted(
-            self._polygons, key=lambda polygon: polygon.area/polygon.perimeter)
-        return sorted_eff_ratios[-1]
+            self._polygons, key=lambda polygon: polygon.area/polygon.perimeter, reverse=True)
+        return sorted_eff_ratios[0]
 
     def __getitem__(self, s):
         return self._polygons[s]
 
     def __len__(self):
         return len(self._polygons)
+
+    def __repr__(self):
+        return f'Polygons(m={self._max_vertices},R={self._circumradius})'
 
 
 polygons = Polygons(5, 54.58)
