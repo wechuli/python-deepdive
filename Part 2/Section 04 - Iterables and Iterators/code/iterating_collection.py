@@ -17,3 +17,7 @@ class RandomNumbers:
         else:
             self.num_requested += 1
             return randint(self.range_min, self.range_max)
+
+
+numbers = RandomNumbers(4, range_min=944, range_max=3203)
+print(next(numbers))
