@@ -46,3 +46,32 @@ Python has a built-in function `iter()`. It calls the `__iter__` method. The fir
 - then is starts calling
 
 If you implement both the Sequence and Iterabble protocol in an object Python prefers to use the Iterator first.
+
+#### Lazy Evaluation
+
+This is often used in class properties:
+- properties of classes may not always be populated when the object is created
+- value of a property only becomes known when the property is requested - deferred
+
+We do not have to calculate the next item in an iterable until it is actually requested.
+
+Using that lazy evaluation technique means that we can actually have infinite iterables. Since items are not computed until they are requested, we can have an infinite number of items in the collection. Don't try to use a for loop over such an iterable.
+
+
+### Python Built-In Iterables and Iterators
+
+Python provides many functions that return iterables or iterators.
+
+Additionally, the iterators perform lazy evaluation
+
+You should always be aware of whether you are dealing with an iterable or an iterator.
+- If an object is an iterable (but not an iterator), you can iterate over it many times
+- If an object is an iterator, you can iterate over it only once
+
+- **range(10)** - iterable
+- **zip(l1,l2)** - iterator
+- **enumerate(l1)** - iterator
+- **open('cars.csv')** - iterator
+- **dictionary.keys()** - iterable
+- **dictionary.values()** - iterable
+- **dictionary.items()**
