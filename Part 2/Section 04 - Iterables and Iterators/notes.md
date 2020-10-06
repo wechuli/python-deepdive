@@ -74,4 +74,4 @@ You should always be aware of whether you are dealing with an iterable or an ite
 - **open('cars.csv')** - iterator
 - **dictionary.keys()** - iterable
 - **dictionary.values()** - iterable
-- **dictionary.items()**
+- **dictionary.items()** - iterable
