@@ -89,3 +89,50 @@ Python first looks for an `__iter__` method
   - Look for a **getitem** method
     - If it's there, create an iterator object and return that
     - If it's not there, raise a `TypeError` exception(not iterable)
+
+### Iterating a sequence in reverse order
+
+If we have a sequence type, then iterating over the sequence in reverse order is quite simple
+
+```python
+
+for item in seq[::-1]:
+  print(item)
+
+```
+
+This works but is wasteful because it makes a copy of the sequence.
+
+OR
+
+```python
+for i in range(len(seq)):
+  print(seq[len(seq)-i-1])
+```
+
+OR
+
+using Python's reversed function
+
+```python
+
+for item in reversed(seq):
+  print(item)
+```
+
+This is cleaner and just as efficient, because it created an iterator that will iterate backwards over the sequence - it does not copy the data like the first example
+
+Both `__getitem__` and `__len__` must be implemented.
+
+We can override how reversed works by implementing the `__reversed__` special method.
+
+### Iterating an iterable in reverse
+
+Unfortunately, reversed() will not work with custom iterables without a little bit of extra work
+
+When we call reversed() on a custom iterable, Python will look for and call the `__reversed__` function
+
+That function should return an iterator that will be used to perform the reversed iteration
+So basically we have to implement reverse ourselves.
+
+Python can reverese a sequence type as long as it has a `__len__` method.
