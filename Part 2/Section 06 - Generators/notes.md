@@ -37,3 +37,15 @@ Generators are exhausted when the function returns a value
 Generators are inherently lazy iterators (and can be infinite)
 
 Generators are iterators and can be used in the same way other iterators are used
+
+### Generator Expressions
+
+Generator expressions use the same comprehension syntax but instead of using `[]` we use `()`
+
+List comprehensions are eager. Generator comprehensions are lazy
+
+The list comprehension is an iterable while the generator expressions are iterators.
+
+Generators are efficient for memory usage.
+
+We can delegate yielding to a nother iterator using `yield from`
