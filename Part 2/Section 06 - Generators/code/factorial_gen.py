@@ -29,6 +29,7 @@ def fact():
     return inner
 
 
+
 fact_iter = iter(fact(), math.factorial(5))
 factorial_iter = FactorialIter(5)
 
