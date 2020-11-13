@@ -1,16 +1,17 @@
 from datetime import date
 from collections import namedtuple
 
+
 file_name = "nyc_parking_tickets_extract.csv"
 
 
-def generate_file_iterator(file_name: str) -> generator:
+def generate_file_iterator(file_name: str):
     with open(file_name) as file:
         columns = next(file).strip('\n').split(',')
         new_columns = []
 
         for column in columns:
-            new_columns.append(column.replace(" ", "", -1))
+            new_columns.append(column.replace(" ", "_", -1).lower())
 
         Parking_data = namedtuple('Parking_data', new_columns)
         for row in file:
@@ -31,7 +32,7 @@ def parse_date_string(date_string: str) -> date:
     return date(int(date_split[2]), int(date_split[0]), int(date_split[1]))
 
 
-def calculate_violations_by_car_make(violations: generator) -> dict:
+def calculate_violations_by_car_make(violations) -> dict:
     violations_by_make = {
 
     }
@@ -45,4 +46,5 @@ def calculate_violations_by_car_make(violations: generator) -> dict:
 
 
 f = generate_file_iterator(file_name)
+print(next(f))
 print(calculate_violations_by_car_make(f))

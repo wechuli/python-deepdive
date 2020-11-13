@@ -1,0 +1,25 @@
+## The itertools module
+
+- Slicing - `islice`
+- Selecting and Filtering - `dropwhile` `takewhile` `compress` `filterfalse`
+- Chaining and Teeing - `chain` `tee`
+- Mapping and Reducing - `starmap` `accumulate`
+- Infinite iterators - `count`, `cycle`, `repeat`
+- Sipping - `zip_longest`
+- Combinatorics `product` `permutations` `combinations` `combinations_with_replacement`
+
+### Aggregators
+
+Functions that iterate through an iterable and return a single value that(usually) takes into account e.g sum,max,min
+
+Every object in Python has an associated truth value
+
+Falsy values
+- None
+- False
+- 0
+- empty sequence(e.g list, tuple, string)
+- empty mapping types (e.g dictionary,set)
+- custom classes that implement a `__bool__` or `__len__` method that returns False or 0
+
+A function that takes a single argument and returns True or False is called a predicate
