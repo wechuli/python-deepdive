@@ -23,3 +23,8 @@ Falsy values
 - custom classes that implement a `__bool__` or `__len__` method that returns False or 0
 
 A function that takes a single argument and returns True or False is called a predicate
+
+### Selecting and Filtering
+
+- **itertools.compress** - it is basically a way of filtering one iterable, using the truthiness of items in another iterable.
+- **itertools.takewhile** - The takewhile function returns an iterator that will yield items while pred(item) is truthy
