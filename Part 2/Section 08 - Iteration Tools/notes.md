@@ -28,3 +28,25 @@ A function that takes a single argument and returns True or False is called a pr
 
 - **itertools.compress** - it is basically a way of filtering one iterable, using the truthiness of items in another iterable.
 - **itertools.takewhile** - The takewhile function returns an iterator that will yield items while pred(item) is truthy
+
+### Chaining and Teeing
+
+#### Chanining Iterables
+This is analogous to sequence concatenation but not the same
+
+#### Copying Iterators
+
+Sometimes we need to iterate through the same iterator multiple times, or even in parallel
+
+We can use `tee` in `itertools`
+- returns independent iterators in a tuple
+
+## Mapping and Accumulation
+
+Mapping - applying a callable to each elemtn of an iterable
+Accumulation -> reducing an iterable down to a single value e.g sum(iterable),min(iterable),max(iterable),reduce(fn,iterable,[initializer])
+
+#### starmap
+Starmap is very similar to map
+- it unpacks every sub element of the iterable argument, and passes that to the map function
+- useful for mapping a multi-argument function on an iterables of iterables
