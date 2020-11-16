@@ -1,1 +1,1 @@
-from itertools import takewhile
+from itertools import chain

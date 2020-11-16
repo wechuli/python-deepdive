@@ -50,3 +50,8 @@ Accumulation -> reducing an iterable down to a single value e.g sum(iterable),mi
 Starmap is very similar to map
 - it unpacks every sub element of the iterable argument, and passes that to the map function
 - useful for mapping a multi-argument function on an iterables of iterables
+
+
+### Grouping
+
+Sometimes we want to loop over an iterable of elements but we want to group those elements as we iterate through them.
