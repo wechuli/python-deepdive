@@ -55,3 +55,11 @@ Starmap is very similar to map
 ### Grouping
 
 Sometimes we want to loop over an iterable of elements but we want to group those elements as we iterate through them.
+
+### Combinatorics
+
+Itertool module contains a few functions for generating permutations, combinations.
+
+- Cartesian product
+- Permutation - Elements of the iterable are considered unique based on their position, not their value. T
+- Combinations - Unlike permutations, the order of elements in a combination is not considered -with or without replacement
