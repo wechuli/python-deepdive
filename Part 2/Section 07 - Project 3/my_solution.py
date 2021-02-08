@@ -44,7 +44,7 @@ def calculate_violations_by_car_make(violations) -> dict:
             violations_by_make[violation[7]] = 1
     return {k: v for k, v in sorted(violations_by_make.items(), key=lambda item: item[1], reverse=True)}
 
-
+"ds".fin
 f = generate_file_iterator(file_name)
 print(next(f))
 print(calculate_violations_by_car_make(f))

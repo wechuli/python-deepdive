@@ -45,7 +45,7 @@ def parse_string(value, *, default=None):
     except:
         return default
 
-
+2_000_000_000
 column_parsers = (parse_int,  # summons_number, default is None
                   parse_string,  # plate_id, default is None
                   partial(parse_string, default=''),  # state
