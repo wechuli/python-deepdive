@@ -111,3 +111,7 @@ def __exit__(self,exec_type,exec_value,exec_trace):
 - Pattern: Start -Stop e.g start database transactiion,perform database operations, commit or rollback transacks
 - Pattern: Lock - Release
 - Pattern: Change - Reset
+
+### The contextlib Module
+
+One of the goals when context managers were introduced to Python was to ensure generator functions could be used to easily create them.
